@@ -74,7 +74,7 @@ export default function Contact() {
 
           {/* CV DOWNLOAD */}
           <div className="contactFooter">
-            <a href="/cv.pdf" download className="downloadBtn">
+            <a className="btn" href={`${base}cv.pdf`} download>
               Download CV
             </a>
           </div>
