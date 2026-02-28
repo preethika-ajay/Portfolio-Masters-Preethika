@@ -17,16 +17,16 @@ export default function App() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/achievements" element={<Achievements />} />
-          <Route path="/Arts" element={<Violin />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="education" element={<Education />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="publications" element={<Publications />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="achievements" element={<Achievements />} />
+          <Route path="arts" element={<Violin />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </>
