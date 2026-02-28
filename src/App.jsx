@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/publications" element={<Publications />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/achievements" element={<Achievements />} />
-          <Route path="/violin" element={<Violin />} />
+          <Route path="/Arts" element={<Violin />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

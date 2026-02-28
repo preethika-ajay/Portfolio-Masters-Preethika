@@ -30,7 +30,7 @@
   border-radius: 26px;
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(18,24,38,.28);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(2px);
   box-shadow: 0 18px 70px rgba(0,0,0,.35);
   overflow: hidden;
 }
@@ -243,4 +243,149 @@
 @media (max-width: 900px){
   .heroGrid{ grid-template-columns: 1fr; }
   .heroRight{ min-height: 260px; }
+}
+
+/* Make "wideCardWrapper" span full row in grid layouts */
+.wideCardWrapper {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* Extra safety if cards is flex-based */
+.fullWidthCard {
+  width: 100%;
+  max-width: none;
+  flex: 1 1 100%;
+}
+
+.imageTileImg{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Click cursor */
+.imageTile {
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+
+.imageTile:hover {
+  transform: translateY(-4px);
+}
+
+/* LIGHTBOX */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn .3s ease;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.lightboxContent img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.6);
+}
+
+.lightboxCaption {
+  margin-top: 18px;
+  color: white;
+}
+
+.lightboxCaption h3 {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.lightboxCaption p {
+  opacity: .75;
+  font-style: italic;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.imageGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+/* tile */
+.imageTile{
+  padding: 0;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.imageTile:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+/* image: consistent “gallery” crop */
+.imageTileImg{
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* change to 1/1 if you want squares */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* caption */
+.imageTileMeta{
+  padding: 12px 12px 14px;
+}
+
+.imageTileTitle{
+  font-weight: 850;
+  letter-spacing: .01em;
+  color: bisque;
+}
+
+.imageTileNote{
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: .72;
+  font-style: italic;
+  line-height: 1.35;
+  color: antiquewhite;
 }

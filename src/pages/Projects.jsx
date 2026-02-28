@@ -116,6 +116,17 @@ export default function Projects() {
                     </a>
                   )}
 
+                  {project.google && (
+                    <a
+                      href={project.google}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="projGithub"
+                    >
+                      📝 View Report
+                    </a>
+                  )}
+
                   {project.links?.map((l) => (
                     <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="projLink">
                       {l.label}

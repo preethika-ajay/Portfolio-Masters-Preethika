@@ -129,9 +129,9 @@ export default function Home() {
         <div className="card glowCard">
           <h3>Robot Perception & Embedded Systems</h3>
           <p className="muted">
-            Designing perception and navigation systems for autonomous robots —
+            Designing perception and navigation systems for autonomous robots :
             integrating sensors, vision algorithms, and real-time software for
-            operation in constrained environments such as lunar rover platforms.
+            operation in constrained environments.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function Home() {
           <h3>Artistic Training & Systems Thinking</h3>
           <p className="muted">
             A decade of Carnatic violin and classical dance training shaping
-            discipline, precision, and iterative refinement — principles mirrored
+            discipline, precision, and iterative refinement : principles mirrored
             in debugging complex systems and building reliable AI pipelines.
           </p>
         </div>

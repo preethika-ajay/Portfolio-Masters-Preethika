@@ -61,16 +61,13 @@ export default function Achievements() {
     <div className="achPage pageMotif scanline">
       <div className="pageTitle">
         <h1>Achievements</h1>
-        <p className="muted">A compact trophy case of highlights across academics, research, and engineering.</p>
       </div>
 
-      <Section title="Achievements" subtitle="Trophy Case">
+      <Section>
         <div className="achShell">
           <div className="achTop">
             <div>
-              <div className="achKicker">Highlights</div>
               <div className="achTitle">Milestones & Recognition</div>
-              <div className="achSub muted">Hover a tile for details. Subtle motion, no clutter.</div>
             </div>
 
             <div className="achCounter" aria-label={`Total achievements: ${total}`}>

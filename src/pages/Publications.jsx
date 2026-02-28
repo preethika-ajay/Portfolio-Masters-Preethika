@@ -106,10 +106,9 @@ export default function Publications() {
     <div className="pubPage pageMotif">
       <div className="pageTitle">
         <h1>Publications</h1>
-        <p className="muted">IEEE-style entries with BibTeX, citations, and PDF quick view.</p>
       </div>
 
-      <Section title="Publications" subtitle="Research Archive">
+      <Section>
         <div className="pubArchive">
           <div className="pubArchiveHead">
             <div className="pubKicker">Archive</div>

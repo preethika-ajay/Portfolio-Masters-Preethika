@@ -32,7 +32,7 @@ export default function Layout() {
             <NavLink to="/publications">Publications</NavLink>
             <NavLink to="/skills">Skills</NavLink>
             <NavLink to="/achievements">Awards</NavLink>
-            <NavLink to="/violin">Violin</NavLink>
+            <NavLink to="/arts">Arts</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </nav>
 
@@ -52,7 +52,7 @@ export default function Layout() {
         </motion.div>
 
         <footer className="footer muted">
-          © {new Date().getFullYear()} {cv.name}. Built with React.
+          © {new Date().getFullYear()} {cv.name}.
         </footer>
       </main>
     </div>

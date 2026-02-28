@@ -13,12 +13,9 @@ export default function Skills() {
 
       <div className="pageTitle">
         <h1>Skills</h1>
-        <p className="muted">
-          System capabilities across embedded systems, vision, research and software engineering.
-        </p>
       </div>
 
-      <Section title="Skills" subtitle="Capability Matrix">
+      <Section>
 
         <div className="skillsConsole">
 
