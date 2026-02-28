@@ -1,0 +1,361 @@
+/* Education notebook timeline — integrates with aurora + your glass UI */
+
+.eduPage{
+  position: relative;
+}
+
+.eduEntries{
+  grid-column: 2 / -1;  
+}
+
+.eduNotebook{
+  position: relative;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,38,.30);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  overflow: visible;
+  padding: 22px;
+}
+
+/* subtle aurora tint */
+.eduNotebook::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(60% 55% at 20% 15%, rgba(255,79,216,.12), transparent 62%),
+    radial-gradient(60% 55% at 85% 10%, rgba(51,247,200,.10), transparent 60%),
+    radial-gradient(55% 55% at 55% 90%, rgba(255,204,102,.08), transparent 62%);
+  filter: blur(24px);
+  opacity: .55;
+  pointer-events:none;
+}
+
+.eduNotebookHeader{
+  position: relative;
+  z-index: 1;
+  padding: 8px 6px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 16px;
+}
+
+.eduNotebookKicker{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+.eduNotebookTitle{
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(90deg, rgba(255,204,102,1), rgba(255,79,216,1), rgba(51,247,200,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eduNotebookSub{
+  margin-top: 8px;
+  color: rgba(255,255,255,.70);
+  max-width: 70ch;
+}
+
+/* Timeline layout */
+.eduTimeline{
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr); 
+  gap: 14px;
+  padding: 18px 6px 6px;
+  z-index: 1;
+}
+
+.eduRail{
+  position: absolute;
+  left: 22px;     /* align with dot center for 44px column */
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(255,79,216,.12),
+    rgba(255,255,255,.18),
+    rgba(51,247,200,.10)
+  );
+  opacity: .42;
+  pointer-events: none;
+}
+
+.eduEntries{
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.eduEntryWrap{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.eduDotWrap{
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.eduDot{
+  margin-top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(18,24,38,.8);
+  box-shadow: 0 0 0 6px rgba(255,255,255,.02);
+  position: relative;
+  z-index: 2;
+}
+
+.eduDot.isOn{
+  border-color: rgba(255,255,255,.28);
+  background: linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+  box-shadow:
+    0 0 0 6px rgba(255,79,216,.08),
+    0 0 0 12px rgba(51,247,200,.05);
+}
+
+.eduDotGlow{
+  position:absolute;
+  top: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255,79,216,.12), transparent 60%);
+  filter: blur(8px);
+  opacity: .9;
+  pointer-events:none;
+}
+
+/* Cards */
+.eduCard{
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 20px;
+  background: rgba(0,0,0,.18);
+  padding: 16px 16px 14px;
+  padding-right: 74px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.eduCard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(0,0,0,.22);
+}
+
+.eduCardTop{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.eduCard{
+  display: block;        
+  width: 100%;
+  min-width: 0;
+}
+
+.eduEntryWrap{
+  width: 100%;
+  min-width: 0;
+}
+.eduEntries{
+  width: 100%;
+  min-width: 0;
+}
+
+.eduSchool{
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: 16px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eduDegree{
+  margin-top: 6px;
+  color: rgba(255,255,255,.76);
+  font-weight: 650;
+}
+
+.eduRight{
+  display:grid;
+  grid-auto-flow: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.eduDates{
+  color: rgba(255,255,255,.55);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.eduChevron{
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.70);
+  font-weight: 900;
+}
+
+.eduTags{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.eduTag{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.04);
+}
+
+.eduInkRule{
+  margin-top: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  opacity: .8;
+}
+
+/* Expand */
+.eduExpand{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+
+.eduExpand.isOpen{
+  max-height: 520px;
+}
+
+.eduBlock{
+  margin-top: 14px;
+}
+
+.eduBlockTitle{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 10px;
+}
+
+.eduList{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.74);
+  display: grid;
+  gap: 6px;
+}
+
+.eduPills{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eduPill{
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,.12);
+  color: rgba(255,255,255,.68);
+  background: rgba(255,255,255,.03);
+}
+
+.eduMuted{
+  margin-top: 12px;
+  color: rgba(255,255,255,.55);
+}
+
+/* Notebook vibe: faint paper noise and a red margin line */
+.eduPaperNoise{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.05), transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(255,255,255,.03), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.03), transparent 45%);
+  opacity: .28;
+  pointer-events:none;
+}
+
+.eduMarginRed{
+  position:absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 14px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(190,40,40,.35), transparent);
+  opacity: .7;
+  pointer-events:none;
+}
+
+.eduStamp{
+  position:absolute;
+  top: 54px;
+  right: 14px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(0,0,0,.18);
+  pointer-events:none;
+}
+
+@media (max-width: 720px){
+  .eduTimeline{ grid-template-columns: 30px 1fr; }
+  .eduEntryWrap{ grid-template-columns: 30px 1fr; }
+  .eduNotebook{ padding: 16px; }
+}

@@ -1,0 +1,379 @@
+/* Mission Control Timeline — readable + themed */
+.xpMission{
+  position: relative;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,38,.28);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  overflow: hidden;
+  padding: 22px;
+}
+
+/* subtle aurora tint */
+.xpMission::before{
+  content:"";
+  position:absolute;
+  inset:-50px;
+  background:
+    radial-gradient(60% 55% at 20% 15%, rgba(255,79,216,.12), transparent 62%),
+    radial-gradient(60% 55% at 85% 10%, rgba(51,247,200,.10), transparent 60%),
+    radial-gradient(55% 55% at 55% 90%, rgba(255,204,102,.08), transparent 62%);
+  filter: blur(22px);
+  opacity: .65;
+  pointer-events:none;
+}
+
+.xpHeader{
+  position: relative;
+  z-index: 1;
+  padding: 8px 6px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 16px;
+}
+
+.xpKicker{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+.xpTitle{
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(90deg, rgba(255,204,102,1), rgba(255,79,216,1), rgba(51,247,200,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.xpSub{ margin-top: 8px; }
+
+/* Timeline */
+.xpTimeline{
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 6px 6px;
+  z-index: 1;
+}
+
+.xpRail{
+  position: absolute;
+  left: 26px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(255,79,216,.12),
+    rgba(255,255,255,.18),
+    rgba(51,247,200,.10)
+  );
+  opacity: .40;
+  pointer-events:none;
+}
+
+/* Entries live in column 2 */
+.xpEntries{
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.xpEntry{
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  min-width: 0;
+}
+
+.xpDotCol{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.xpDot{
+  margin-top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(18,24,38,.85);
+  position: relative;
+  z-index: 2;
+}
+
+.xpDot.isOn{
+  border-color: rgba(255,255,255,.28);
+  background: linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+  box-shadow:
+    0 0 0 6px rgba(255,79,216,.08),
+    0 0 0 12px rgba(51,247,200,.05);
+}
+
+.xpDotGlow{
+  position:absolute;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: .9;
+  pointer-events:none;
+  background: radial-gradient(circle, rgba(255,79,216,.12), transparent 60%);
+}
+
+.xpStem{
+  position:absolute;
+  top: 40px;
+  bottom: -12px;
+  width: 2px;
+  background: rgba(255,255,255,.06);
+  opacity: .6;
+}
+
+/* Card */
+.xpCard{
+  display: block;
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 20px;
+  background: rgba(8, 12, 20, .35);
+  padding: 16px 16px 14px;
+  color: inherit;
+  font: inherit;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.xpCard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(8, 12, 20, .45);
+}
+
+.xpTop{
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.xpRoleRow{
+  display:flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.xpIconChip{
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.xpGlyph{
+  opacity: .9;
+}
+
+.xpRole{
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.xpOrg{ margin-top: 4px; }
+
+.xpRight{
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+  min-width: 160px;
+}
+
+.xpDates{
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.xpLoc{
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.xpExpandBtn{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  color: rgba(255,255,255,.70);
+}
+
+.xpHighlight{
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.80);
+}
+
+.xpPreview{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.66);
+  display: grid;
+  gap: 6px;
+}
+
+.xpRule{
+  margin-top: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  opacity: .85;
+}
+
+.xpExpand{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+
+.xpExpand.isOpen{
+  max-height: 700px;
+}
+
+.xpBlock{ margin-top: 14px; }
+
+.xpBlockTitle{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 10px;
+}
+
+.xpList{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.74);
+  display: grid;
+  gap: 6px;
+}
+
+.xpPills{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.xpPill{
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,.12);
+  color: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.03);
+}
+
+.xpLinks{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.xpLink{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.80);
+  text-decoration: none;
+}
+
+.xpLink:hover{
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+.xpNoise{
+  position:absolute;
+  inset:0;
+  opacity:.22;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.06), transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(255,255,255,.04), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.04), transparent 45%);
+}
+
+.xpScan{
+  position:absolute;
+  inset:-40px;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  animation: xpScanMove 7s linear infinite;
+}
+
+@keyframes xpScanMove{
+  from{ transform: translateY(-20px); }
+  to{ transform: translateY(20px); }
+}
+
+/* Theme tints (per-role identity) */
+.theme-robot .xpIconChip{ box-shadow: 0 0 0 6px rgba(51,247,200,.05); }
+.theme-vision .xpIconChip{ box-shadow: 0 0 0 6px rgba(122,162,255,.06); }
+.theme-research .xpIconChip{ box-shadow: 0 0 0 6px rgba(255,204,102,.06); }
+.theme-security .xpIconChip{ box-shadow: 0 0 0 6px rgba(255,79,216,.06); }
+.theme-systems .xpIconChip{ box-shadow: 0 0 0 6px rgba(255,255,255,.04); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .xpScan{ animation: none; }
+  .xpCard{ transition: none; }
+}
+
+@media (max-width: 720px){
+  .xpTimeline{ grid-template-columns: 42px minmax(0,1fr); }
+  .xpEntry{ grid-template-columns: 42px minmax(0,1fr); }
+  .xpRail{ left: 20px; }
+  .xpRight{ min-width: 120px; }
+}
