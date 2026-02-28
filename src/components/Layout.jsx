@@ -3,19 +3,12 @@ import { motion } from "framer-motion";
 import { FaRobot, FaCameraRetro, FaMusic, FaMicrochip, FaSatelliteDish } from "react-icons/fa";
 import { cv } from "../data/cvData";
 
+const base = import.meta.env.BASE_URL;
+
 export default function Layout() {
   return (
     <div className="page">
-      <div className="aurora" aria-hidden="true" />
-      <div className="gridGlow" aria-hidden="true" />
-
-      <div className="floaters" aria-hidden="true">
-        <span className="floater f1"><FaRobot /></span>
-        <span className="floater f2"><FaCameraRetro /></span>
-        <span className="floater f3"><FaMusic /></span>
-        <span className="floater f4"><FaMicrochip /></span>
-        <span className="floater f5"><FaSatelliteDish /></span>
-      </div>
+      {/* ... */}
 
       <header className="topbar">
         <div className="topbarInner">
@@ -36,7 +29,7 @@ export default function Layout() {
             <NavLink to="/contact">Contact</NavLink>
           </nav>
 
-          <a className="btn" href="/cv.pdf" download>
+          <a className="btn" href={`${base}cv.pdf`} download>
             Download CV
           </a>
         </div>
