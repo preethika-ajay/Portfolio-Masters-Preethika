@@ -1,3 +1,6 @@
+const base = import.meta.env.BASE_URL;
+const asset = (p) => `${base}${p}`;
+
 export const cv = {
   name: "Preethika Ajaykumar",
   title:
@@ -311,213 +314,212 @@ export const cv = {
       //   title: "Bharatanatyam Performance"
       // }
     },
-    paintings: {
-     images: [
-  {
-    thumb: "/paintings/thumbs/1.webp",
-    src: "/paintings/full/1.webp",
-    title: "Sunset Tides",
-    note: "Where the ocean holds the last light: a moment when sky and sea dissolve into stillness."
-  },
-  {
-    thumb: "/paintings/thumbs/2.webp",
-    src: "/paintings/full/2.webp",
-    title: "Mandala Sanctum",
-    note: "Precision becomes devotion: geometry repeating like a silent mantra."
-  },
-  {
-    thumb: "/paintings/thumbs/3.webp",
-    src: "/paintings/full/3.webp",
-    title: "Gilded Orbit",
-    note: "A small sun in motion: an ode to Hogwarts and the persistence of wonder."
-  },
-  {
-    thumb: "/paintings/thumbs/5.webp",
-    src: "/paintings/full/5.webp",
-    title: "Dune Constellations",
-    note: "Ancient pyramids beneath infinite stars: history breathing through silence."
-  },
-  {
-    thumb: "/paintings/thumbs/6.webp",
-    src: "/paintings/full/6.webp",
-    title: "Floral Currents",
-    note: "Flowers meeting waves: softness carried by rhythm and motion."
-  },
-  {
-    thumb: "/paintings/thumbs/7.webp",
-    src: "/paintings/full/7.webp",
-    title: "Nataraja’s Surrender",
-    note: "Stillness inside the cosmic dance: devotion expressed through movement."
-  },
-  {
-    thumb: "/paintings/thumbs/8.webp",
-    src: "/paintings/full/8.webp",
-    title: "Temple Quietude",
-    note: "Peace layered like incense: a threshold into the mystic."
-  },
-  {
-    thumb: "/paintings/thumbs/9.webp",
-    src: "/paintings/full/9.webp",
-    title: "Legendline: M.S.S",
-    note: "For voices that become timeless: grace resonating beyond generations."
-  },
-  {
-    thumb: "/paintings/thumbs/10.webp",
-    src: "/paintings/full/10.webp",
-    title: "Kathakali Flame",
-    note: "Ancient expression reborn in color: mythology alive in human form."
-  },
-  {
-    thumb: "/paintings/thumbs/11.webp",
-    src: "/paintings/full/11.webp",
-    title: "Kodai Haze",
-    note: "Mountain air and drifting nights: nostalgia painted in blue light."
-  },
-  {
-    thumb: "/paintings/thumbs/12.webp",
-    src: "/paintings/full/12.webp",
-    title: "Many Angles of One Life",
-    note: "Perspective transforms meaning: reality seen through shifting frames."
-  },
-  {
-    thumb: "/paintings/thumbs/13.webp",
-    src: "/paintings/full/13.webp",
-    title: "Red Velocity",
-    note: "Speed as poetry: motion captured at the edge of control."
-  },
-  {
-    thumb: "/paintings/thumbs/14.webp",
-    src: "/paintings/full/14.webp",
-    title: "Verdant Passage",
-    note: "A train cutting through green chaos: journeys born from movement."
-  },
-  {
-    thumb: "/paintings/thumbs/15.webp",
-    src: "/paintings/full/15.webp",
-    title: "Vettel: The Calm Edge",
-    note: "Precision and fire united: the quiet intensity of a champion."
-  },
-  {
-    thumb: "/paintings/thumbs/16.webp",
-    src: "/paintings/full/16.webp",
-    title: "Ponmalai Hour",
-    note: "Hills touched by golden dusk: India singing through landscape."
-  }
-]
-    },
-
-    travel: {
+   paintings: {
   images: [
     {
-      thumb: "/travel/thumbs/1.webp",
-      src: "/travel/full/1.webp",
+      thumb: asset("paintings/thumbs/1.webp"),
+      src: asset("paintings/full/1.webp"),
+      title: "Sunset Tides",
+      note: "Where the ocean holds the last light: a moment when sky and sea dissolve into stillness."
+    },
+    {
+      thumb: asset("paintings/thumbs/2.webp"),
+      src: asset("paintings/full/2.webp"),
+      title: "Mandala Sanctum",
+      note: "Precision becomes devotion: geometry repeating like a silent mantra."
+    },
+    {
+      thumb: asset("paintings/thumbs/3.webp"),
+      src: asset("paintings/full/3.webp"),
+      title: "Gilded Orbit",
+      note: "A small sun in motion: an ode to Hogwarts and the persistence of wonder."
+    },
+    {
+      thumb: asset("paintings/thumbs/5.webp"),
+      src: asset("paintings/full/5.webp"),
+      title: "Dune Constellations",
+      note: "Ancient pyramids beneath infinite stars: history breathing through silence."
+    },
+    {
+      thumb: asset("paintings/thumbs/6.webp"),
+      src: asset("paintings/full/6.webp"),
+      title: "Floral Currents",
+      note: "Flowers meeting waves: softness carried by rhythm and motion."
+    },
+    {
+      thumb: asset("paintings/thumbs/7.webp"),
+      src: asset("paintings/full/7.webp"),
+      title: "Nataraja’s Surrender",
+      note: "Stillness inside the cosmic dance: devotion expressed through movement."
+    },
+    {
+      thumb: asset("paintings/thumbs/8.webp"),
+      src: asset("paintings/full/8.webp"),
+      title: "Temple Quietude",
+      note: "Peace layered like incense: a threshold into the mystic."
+    },
+    {
+      thumb: asset("paintings/thumbs/9.webp"),
+      src: asset("paintings/full/9.webp"),
+      title: "Legendline: M.S.S",
+      note: "For voices that become timeless: grace resonating beyond generations."
+    },
+    {
+      thumb: asset("paintings/thumbs/10.webp"),
+      src: asset("paintings/full/10.webp"),
+      title: "Kathakali Flame",
+      note: "Ancient expression reborn in color: mythology alive in human form."
+    },
+    {
+      thumb: asset("paintings/thumbs/11.webp"),
+      src: asset("paintings/full/11.webp"),
+      title: "Kodai Haze",
+      note: "Mountain air and drifting nights: nostalgia painted in blue light."
+    },
+    {
+      thumb: asset("paintings/thumbs/12.webp"),
+      src: asset("paintings/full/12.webp"),
+      title: "Many Angles of One Life",
+      note: "Perspective transforms meaning: reality seen through shifting frames."
+    },
+    {
+      thumb: asset("paintings/thumbs/13.webp"),
+      src: asset("paintings/full/13.webp"),
+      title: "Red Velocity",
+      note: "Speed as poetry: motion captured at the edge of control."
+    },
+    {
+      thumb: asset("paintings/thumbs/14.webp"),
+      src: asset("paintings/full/14.webp"),
+      title: "Verdant Passage",
+      note: "A train cutting through green chaos: journeys born from movement."
+    },
+    {
+      thumb: asset("paintings/thumbs/15.webp"),
+      src: asset("paintings/full/15.webp"),
+      title: "Vettel: The Calm Edge",
+      note: "Precision and fire united: the quiet intensity of a champion."
+    },
+    {
+      thumb: asset("paintings/thumbs/16.webp"),
+      src: asset("paintings/full/16.webp"),
+      title: "Ponmalai Hour",
+      note: "Hills touched by golden dusk: India singing through landscape."
+    }
+  ]
+},
+
+travel: {
+  images: [
+    {
+      thumb: asset("travel/thumbs/1.webp"),
+      src: asset("travel/full/1.webp"),
       title: "Stockholm",
       note: "Nordic stillness: water, stone, and a light that feels like whispering glass."
     },
     {
-      thumb: "/travel/thumbs/2.webp",
-      src: "/travel/full/2.webp",
-      title: "Tromso",
+      thumb: asset("travel/thumbs/2.webp"),
+      src: asset("travel/full/2.webp"),
+      title: "Tromsø",
       note: "Arctic hush: the sky learning to glow, and silence turning luminous."
     },
     {
-      thumb: "/travel/thumbs/3.webp",
-      src: "/travel/full/3.webp",
+      thumb: asset("travel/thumbs/3.webp"),
+      src: asset("travel/full/3.webp"),
       title: "Albufeira",
       note: "Atlantic edges: cliffs breathing salt, waves writing their own hymns."
     },
     {
-      thumb: "/travel/thumbs/5.webp",
-      src: "/travel/full/5.webp",
+      thumb: asset("travel/thumbs/5.webp"),
+      src: asset("travel/full/5.webp"),
       title: "Barcelona",
       note: "Living geometry: Gaudí curves, sunlit streets, and the city’s electric pulse."
     },
     {
-      thumb: "/travel/thumbs/6.webp",
-      src: "/travel/full/6.webp",
+      thumb: asset("travel/thumbs/6.webp"),
+      src: asset("travel/full/6.webp"),
       title: "Seville",
       note: "Warm twilight: tiled shadows, orange blossom air, and time moving slowly."
     },
     {
-      thumb: "/travel/thumbs/8.webp",
-      src: "/travel/full/8.webp",
+      thumb: asset("travel/thumbs/8.webp"),
+      src: asset("travel/full/8.webp"),
       title: "Madrid",
       note: "Golden hours: museums and plazas where footsteps feel like conversations."
     },
     {
-      thumb: "/travel/thumbs/10.webp",
-      src: "/travel/full/10.webp",
+      thumb: asset("travel/thumbs/10.webp"),
+      src: asset("travel/full/10.webp"),
       title: "Portugal",
       note: "Blue horizons: a coastline that teaches calm through repetition and tide."
     },
     {
-      thumb: "/travel/thumbs/11.webp",
-      src: "/travel/full/11.webp",
+      thumb: asset("travel/thumbs/11.webp"),
+      src: asset("travel/full/11.webp"),
       title: "Singapore",
       note: "Neon rain: a city of glass and gardens where futures feel close enough to touch."
     },
     {
-      thumb: "/travel/thumbs/12.webp",
-      src: "/travel/full/12.webp",
+      thumb: asset("travel/thumbs/12.webp"),
+      src: asset("travel/full/12.webp"),
       title: "Pondicherry",
       note: "Sea-breeze quiet: pastel walls, warm light, and mornings that feel unhurried."
     },
     {
-      thumb: "/travel/thumbs/13.webp",
-      src: "/travel/full/13.webp",
+      thumb: asset("travel/thumbs/13.webp"),
+      src: asset("travel/full/13.webp"),
       title: "Castle in the Night",
       note: "Midnight stone: history holding its breath beneath a velvet sky."
     },
     {
-      thumb: "/travel/thumbs/14.webp",
-      src: "/travel/full/14.webp",
+      thumb: asset("travel/thumbs/14.webp"),
+      src: asset("travel/full/14.webp"),
       title: "A Sunset to Miss",
       note: "Last light lingering: the sky folding into memory like silk."
     },
     {
-      thumb: "/travel/thumbs/15.webp",
-      src: "/travel/full/15.webp",
+      thumb: asset("travel/thumbs/15.webp"),
+      src: asset("travel/full/15.webp"),
       title: "Scheveningen",
       note: "North Sea wind: waves like percussion, and horizons that reset the mind."
     },
     {
-      thumb: "/travel/thumbs/16.webp",
-      src: "/travel/full/16.webp",
+      thumb: asset("travel/thumbs/16.webp"),
+      src: asset("travel/full/16.webp"),
       title: "Antwerpen",
       note: "Old-city glow: quiet streets, cathedral silhouettes, and soft gold evenings."
     },
     {
-      thumb: "/travel/thumbs/17.webp",
-      src: "/travel/full/17.webp",
+      thumb: asset("travel/thumbs/17.webp"),
+      src: asset("travel/full/17.webp"),
       title: "Ghent",
       note: "Canal twilight: reflections trembling like ink, the city lit like a painting."
     },
     {
-      thumb: "/travel/thumbs/18.webp",
-      src: "/travel/full/18.webp",
+      thumb: asset("travel/thumbs/18.webp"),
+      src: asset("travel/full/18.webp"),
       title: "Brugge",
       note: "Storybook stillness: bridges, bells, and mist that feels almost sacred."
     },
     {
-      thumb: "/travel/thumbs/20.webp",
-      src: "/travel/full/20.webp",
+      thumb: asset("travel/thumbs/20.webp"),
+      src: asset("travel/full/20.webp"),
       title: "Brussels",
       note: "Rain-glossed streets: lights in puddles, and warmth found in small cafés."
     },
     {
-      thumb: "/travel/thumbs/21.webp",
-      src: "/travel/full/21.webp",
+      thumb: asset("travel/thumbs/21.webp"),
+      src: asset("travel/full/21.webp"),
       title: "Sringeri",
       note: "Temple hush: river chants, incense air, and silence that feels like prayer."
     },
     {
-      thumb: "/travel/thumbs/22.webp",
-      src: "/travel/full/22.webp",
+      thumb: asset("travel/thumbs/22.webp"),
+      src: asset("travel/full/22.webp"),
       title: "Gokarna",
       note: "Sacred shoreline: dawn on the water, and waves carrying old stories home."
     }
   ]
-
-    },
+}
   },
 };
