@@ -300,7 +300,7 @@ export const cv = {
     violin: {
       title: "Carnatic Violin",
       years: "10+ years",
-      video: { kind: "mp4", src: "/media/violin_h264.mp4", title: "Carnatic Violin" }
+      video: { kind: "youtube", id: "crbJgu3iH64", title: "Carnatic Violin" }
     },
     dance: {
       title: "Bharatanatyam",
