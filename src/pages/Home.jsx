@@ -117,34 +117,44 @@ export default function Home() {
         </div>
 
         <div className="badgeStack">
-          <div className="badge"><FaRobot /> Robotics</div>
+          <div className="badge"><FaRobot />Embedded Systems</div>
           <div className="badge"><FaCameraRetro /> Computer Vision</div>
           <div className="badge"><FaMusic /> Carnatic Violin</div>
         </div>
       </div>
 
-      <Section title="Highlights" subtitle="A quick snapshot (click tabs in the navbar for full pages)">
-        <div className="cards">
-          <div className="card glowCard">
-            <h3>Robots & Embedded</h3>
-            <p className="muted">
-              Navigation/perception work (LunarZebro), hardware integration, and real-time pipelines.
-            </p>
-          </div>
-          <div className="card glowCard">
-            <h3>Systems & Security</h3>
-            <p className="muted">
-              Microservices, gRPC, Kafka, Kubernetes; ACME ARI work at DigiCert.
-            </p>
-          </div>
-          <div className="card violinCard">
-            <h3>Music & Discipline</h3>
-            <p className="muted">
-              Carnatic violin background — precision, iteration, and performance under pressure.
-            </p>
-          </div>
+      <Section title="Highlights" subtitle="A quick snapshot">
+      <div className="cards">
+
+        <div className="card glowCard">
+          <h3>Robot Perception & Embedded Systems</h3>
+          <p className="muted">
+            Designing perception and navigation systems for autonomous robots —
+            integrating sensors, vision algorithms, and real-time software for
+            operation in constrained environments such as lunar rover platforms.
+          </p>
         </div>
-      </Section>
+
+        <div className="card glowCard">
+          <h3>Distributed Systems & Secure Infrastructure</h3>
+          <p className="muted">
+            Backend engineering at scale: microservices communication, API design,
+            event-driven architectures, and cloud-native deployment using gRPC,
+            Kafka, Kubernetes, and security automation through ACME ARI.
+          </p>
+        </div>
+
+        <div className="card violinCard">
+          <h3>Artistic Training & Systems Thinking</h3>
+          <p className="muted">
+            A decade of Carnatic violin and classical dance training shaping
+            discipline, precision, and iterative refinement — principles mirrored
+            in debugging complex systems and building reliable AI pipelines.
+          </p>
+        </div>
+
+      </div>
+    </Section>
     </>
   );
 }

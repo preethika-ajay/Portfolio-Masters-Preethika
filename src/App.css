@@ -105,13 +105,61 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 0 22px rgba(122,162,255,.45);
 }
 
-.nav{ display:none; gap:12px; margin-left: 8px; flex:1; }
+.nav{
+  display:none;
+  gap:12px;
+  margin-left: 8px;
+  flex:1;
+  align-items: center;            /* keep row aligned */
+}
+
 .showNav{ display:flex !important; }
-.nav a{ color: var(--muted); font-size: 14px; }
-.nav a:hover{ color: var(--text); text-decoration:none; }
+
+/* make every link a stable pill with fixed line-height */
+.nav a{
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;                /* remove baseline weirdness */
+  height: 34px;                  /* stable height */
+  display: inline-flex;          /* stable vertical centering */
+  align-items: center;
+  padding: 0 12px;               /* pill spacing */
+  border-radius: 999px;
+  position: relative;
+  text-decoration: none;
+  transform: translateZ(0);      /* reduce subpixel jitter */
+  -webkit-font-smoothing: antialiased;
+  transition: color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.nav a:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.04);
+}
+
+/* active = glow + underline WITHOUT affecting layout */
 .nav a.active{
   color: var(--text);
-  text-shadow: 0 0 18px rgba(122,162,255,.22);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 10px 24px rgba(0,0,0,.18);
+  text-shadow: none;             /* <-- important */
+}
+
+.nav a.active::after{
+  content:"";
+  position:absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+  opacity: .85;
 }
 
 .btn{

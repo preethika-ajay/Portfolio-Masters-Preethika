@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cv } from "../data/cvData";
 import Section from "../components/Section";
 import "../styles/projects.css";
@@ -7,69 +8,123 @@ export default function Projects() {
   const [active, setActive] = useState(0);
   const project = cv.projects[active];
 
+  // Optional: keyboard nav (console feel)
+  const max = cv.projects.length - 1;
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowDown") setActive((v) => Math.min(max, v + 1));
+      if (e.key === "ArrowUp") setActive((v) => Math.max(0, v - 1));
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [max]);
+
+  const panelVariants = useMemo(
+    () => ({
+      initial: { opacity: 0, y: 10, filter: "blur(2px)" },
+      animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+      exit: { opacity: 0, y: -10, filter: "blur(2px)" },
+    }),
+    []
+  );
+
   return (
     <div className="projPage pageMotif scanline">
       <div className="pageTitle">
         <h1>Projects</h1>
-        <p className="muted">
-          Experimental systems spanning robotics, embedded AI, perception and infrastructure.
-        </p>
+        
       </div>
 
-      <Section title="Projects" subtitle="Research Lab">
+      <Section>
         <div className="projLab">
-
           {/* LEFT RAIL */}
-          <div className="projRail">
+          <div className="projRail" role="tablist" aria-label="Project list">
             {cv.projects.map((p, i) => (
               <button
                 key={p.name}
                 className={`projNode ${i === active ? "isActive" : ""}`}
                 onClick={() => setActive(i)}
+                role="tab"
+                aria-selected={i === active}
               >
-                <span className="projDot"/>
-                <span>{p.name}</span>
+                <span className="projDot" />
+                <span className="projNodeText">{p.name}</span>
               </button>
             ))}
           </div>
 
           {/* RIGHT PANEL */}
           <div className="projConsole">
+            <div className="projScan" aria-hidden="true" />
 
-            <div className="projHeader">
-              <h2>{project.name}</h2>
-              <span className="projStatus">ACTIVE EXPERIMENT</span>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={project.name}
+                variants={panelVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="projHeader">
+                  <h2>{project.name}</h2>
+                  <span className="projStatus">ACTIVE EXPERIMENT</span>
+                </div>
 
-            <p className="projDesc">{project.desc}</p>
+                <p className="projDesc">{project.desc}</p>
 
-            <div className="projTags">
-              {project.tags.map((t) => (
-                <span key={t} className="projTag">{t}</span>
-              ))}
-            </div>
+                <motion.div
+                  className="projTags"
+                  initial="initial"
+                  animate="animate"
+                  variants={{
+                    initial: { opacity: 0 },
+                    animate: { opacity: 1, transition: { staggerChildren: 0.04 } },
+                  }}
+                >
+                  {project.tags.map((t) => (
+                    <motion.span
+                      key={t}
+                      className="projTag"
+                      variants={{
+                        initial: { opacity: 0, y: 6 },
+                        animate: { opacity: 1, y: 0 },
+                      }}
+                    >
+                      {t}
+                    </motion.span>
+                  ))}
+                </motion.div>
 
-            {/* Optional extended fields */}
-            {project.details && (
-              <ul className="projList">
-                {project.details.map((d,i)=>(
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
-            )}
+                {project.details && (
+                  <ul className="projList">
+                    {project.details.map((d, i) => (
+                      <li key={i}>{d}</li>
+                    ))}
+                  </ul>
+                )}
 
-            {project.links && (
-              <div className="projLinks">
-                {project.links.map(l=>(
-                  <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-            )}
+                <div className="projLinks">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="projGithub"
+                    >
+                      🚀 View on GitHub
+                    </a>
+                  )}
 
+                  {project.links?.map((l) => (
+                    <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="projLink">
+                      {l.label}
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
-
         </div>
       </Section>
     </div>

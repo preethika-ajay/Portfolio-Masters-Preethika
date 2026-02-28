@@ -133,3 +133,121 @@
     overflow:auto;
   }
 }
+
+.projLinks{
+  margin-top: 18px;
+}
+
+.projGithub{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  color:white;
+  background: linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.35),
+    0 0 24px rgba(122,162,255,.25);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+
+.projGithub:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.45),
+    0 0 36px rgba(122,162,255,.4);
+}
+
+/* Make console feel alive */
+.projConsole{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scanner sweep (subtle) */
+.projScan{
+  position:absolute;
+  inset:-60px;
+  pointer-events:none;
+  background: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(255,255,255,.08) 48%,
+    transparent 56%
+  );
+  transform: translateX(-70%);
+  opacity: .0;
+  animation: projScan 4.8s ease-in-out infinite;
+}
+
+@keyframes projScan{
+  0%   { transform: translateX(-70%); opacity: 0; }
+  20%  { opacity: .35; }
+  45%  { opacity: .18; }
+  70%  { opacity: 0; transform: translateX(70%); }
+  100% { opacity: 0; transform: translateX(70%); }
+}
+
+/* Active node pulse */
+.projNode.isActive .projDot{
+  box-shadow:
+    0 0 0 6px rgba(255,79,216,.10),
+    0 0 0 12px rgba(51,247,200,.06);
+  animation: dotPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes dotPulse{
+  0%,100% { transform: scale(1); opacity:.9; }
+  50%     { transform: scale(1.12); opacity:1; }
+}
+
+/* Prevent text “jump” and make rail nicer */
+.projNode{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-align:left;
+}
+
+.projNodeText{
+  min-width:0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Optional hint styling */
+.projRailHint{
+  margin-top: 10px;
+  opacity: .7;
+}
+
+/* Links row */
+.projLinks{
+  margin-top: 18px;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.projLink{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.8);
+  text-decoration:none;
+}
+
+.projLink:hover{
+  background: rgba(255,255,255,.08);
+}

@@ -34,17 +34,18 @@ export default function Education() {
 
   return (
     <div className="eduPage">
+      <div className="pageTitle">
+        <h1>Education</h1>
+      </div>
       <Section
-        title="Education"
-        subtitle="A research-notebook timeline of where I studied and what I focused on."
+        // title="Education"
+        // subtitle="A research-notebook timeline of where I studied and what I focused on."
       >
         <div className="eduNotebook">
           <div className="eduNotebookHeader">
             <div className="eduNotebookKicker">Notebook</div>
             <div className="eduNotebookTitle">Academic Timeline</div>
-            <div className="eduNotebookSub">
-              Click any entry to expand details (courses, focus areas, achievements).
-            </div>
+            
           </div>
 
           <div className="eduTimeline">

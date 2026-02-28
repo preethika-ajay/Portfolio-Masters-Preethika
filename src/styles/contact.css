@@ -1,0 +1,140 @@
+.contactConsole{
+  position: relative;
+  border-radius: 26px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,38,.28);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  box-shadow: 0 20px 70px rgba(0,0,0,.4);
+  overflow:hidden;
+}
+
+/* Header */
+
+.contactHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.contactKicker{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+}
+
+.contactTitle{
+  font-size:26px;
+  font-weight:900;
+  background:linear-gradient(
+    90deg,
+    rgba(255,204,102,1),
+    rgba(255,79,216,1),
+    rgba(51,247,200,1)
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* Signal animation */
+
+.signalIndicator{
+  display:flex;
+  gap:6px;
+}
+
+.signalIndicator span{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:#33f7c8;
+  animation:signalPulse 1.6s infinite;
+}
+
+.signalIndicator span:nth-child(2){ animation-delay:.2s }
+.signalIndicator span:nth-child(3){ animation-delay:.4s }
+
+@keyframes signalPulse{
+  0%,100%{ opacity:.2; transform:scale(.7); }
+  50%{ opacity:1; transform:scale(1); }
+}
+
+/* Email */
+
+.contactCard{
+  margin-bottom:24px;
+}
+
+.contactLabel{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:rgba(255,255,255,.55);
+}
+
+.contactEmail{
+  font-size:20px;
+  font-weight:800;
+  text-decoration:none;
+  color:white;
+}
+
+/* Links */
+
+.contactLinks{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+}
+
+.contactLinkCard{
+  padding:16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.22);
+  text-decoration:none;
+  color:white;
+  text-align:center;
+  transition:.2s;
+}
+
+.contactLinkCard:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);
+}
+
+/* Download */
+
+.contactFooter{
+  margin-top:26px;
+  text-align:center;
+}
+
+.downloadBtn{
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.15);
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+}
+
+.downloadBtn:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* Ambient noise */
+
+.contactNoise{
+  position:absolute;
+  inset:0;
+  opacity:.18;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.06), transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(255,255,255,.04), transparent 40%);
+}

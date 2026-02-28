@@ -1,0 +1,362 @@
+.pubArchive{
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,38,.28);
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.pubArchive::before{
+  content:"";
+  position:absolute;
+  inset:-50px;
+  background:
+    radial-gradient(60% 55% at 20% 15%, rgba(255,79,216,.12), transparent 62%),
+    radial-gradient(60% 55% at 85% 10%, rgba(51,247,200,.10), transparent 60%),
+    radial-gradient(55% 55% at 55% 90%, rgba(255,204,102,.08), transparent 62%);
+  filter: blur(22px);
+  opacity: .55;
+  pointer-events:none;
+}
+
+.pubArchiveHead{
+  position: relative;
+  z-index: 1;
+  padding: 6px 6px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 16px;
+}
+
+.pubKicker{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+.pubHeadTitle{
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(90deg, rgba(255,204,102,1), rgba(255,79,216,1), rgba(51,247,200,1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pubHeadSub{ margin-top: 8px; }
+
+.pubMono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.pubYearBlock{ position: relative; z-index: 1; margin-top: 22px; }
+.pubYear{
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.72);
+  margin: 18px 0 12px;
+}
+
+.pubItem{
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(8, 12, 20, .35);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  margin-bottom: 14px;
+}
+
+.pubItem:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(8, 12, 20, .45);
+}
+
+.pubBadges{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pubBadge{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.74);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pubBadgeIcon{ opacity: .85; }
+.pubBadgeText{ opacity: .9; }
+
+.kind-conference{ box-shadow: 0 0 0 6px rgba(122,162,255,.05); }
+.kind-journal{ box-shadow: 0 0 0 6px rgba(51,247,200,.05); }
+.kind-award{ box-shadow: 0 0 0 6px rgba(255,204,102,.06); }
+.kind-note{ box-shadow: 0 0 0 6px rgba(255,79,216,.05); }
+
+.pubTitle{
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: 16px;
+}
+
+.pubTitle a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.pubExt{
+  margin-left: 6px;
+  opacity: .6;
+}
+
+.pubIEEE{
+  margin-top: 10px;
+  color: rgba(255,255,255,.70);
+  line-height: 1.55;
+}
+
+.pubAbstract{
+  margin-top: 12px;
+  color: rgba(255,255,255,.72);
+  max-width: 80ch;
+  line-height: 1.65;
+}
+
+.pubTags{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.pubTag{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: rgba(255,255,255,.72);
+}
+
+/* Quick row reveals on hover */
+.pubQuick{
+  margin-top: 12px;
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  opacity: .0;
+  transform: translateY(4px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.pubItem:hover .pubQuick{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pubMetrics{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.pubMetric{
+  display:inline-flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+}
+
+.pubMetricNum{ font-weight: 900; color: rgba(255,255,255,.86); }
+.pubMetricLbl{ color: rgba(255,255,255,.62); font-size: 12px; }
+
+.pubActions{ display:flex; gap: 10px; flex-wrap: wrap; }
+
+.pubBtn{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.82);
+  cursor: pointer;
+  font: inherit;
+}
+
+.pubBtn:hover{
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+.pubRight{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-width: 0;
+}
+
+.pubMetaRow{
+  color: rgba(255,255,255,.72);
+  font-size: 12px;
+  text-align: right;
+  line-height: 1.45;
+}
+
+.pubRightBtns{
+  display:flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pubIconBtn{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.82);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pubIconBtn:hover{
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+.pubNoise{
+  position:absolute;
+  inset:0;
+  opacity:.22;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.06), transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(255,255,255,.04), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.04), transparent 45%);
+}
+
+/* Toast */
+.pubToast{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(8, 12, 20, .75);
+  color: rgba(255,255,255,.90);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  z-index: 9999;
+}
+
+/* Modal */
+.pubModalBackdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(8px);
+  z-index: 9998;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 22px;
+}
+
+.pubModal{
+  width: min(920px, 96vw);
+  max-height: 86vh;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(18,24,38,.92);
+  box-shadow: 0 18px 80px rgba(0,0,0,.45);
+  display:flex;
+  flex-direction: column;
+}
+
+.pubModalTop{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.pubModalTitle{
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.pubModalBody{
+  padding: 16px;
+  overflow: auto;
+}
+
+.pubBibtex{
+  margin: 12px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+  color: rgba(255,255,255,.86);
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.pubPdfWrap{
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+}
+
+.pubPdf{
+  width: 100%;
+  height: 70vh;
+  border: 0;
+}
+
+.pubHint{
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  .pubItem{
+    grid-template-columns: 1fr;
+  }
+  .pubRight{
+    align-items: flex-start;
+  }
+  .pubMetaRow{ text-align: left; }
+}

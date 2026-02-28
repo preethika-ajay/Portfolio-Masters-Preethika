@@ -49,11 +49,11 @@ export default function Experience() {
       <div className="pageTitle">
         <h1>Experience</h1>
         <p className="muted">
-          Mission-log timeline of engineering + research work across systems, security, vision, and robotics.
+          {/* Mission-log timeline of engineering + research work across systems, security, vision, and robotics. */}
         </p>
       </div>
 
-      <Section title="Experience" subtitle="Mission Control Timeline">
+      <Section>
         <div className="xpMission">
           <div className="xpHeader">
             <div className="xpKicker">Mission Control</div>
@@ -108,13 +108,13 @@ export default function Experience() {
                       {x.highlight ? <div className="xpHighlight">{x.highlight}</div> : null}
 
                       {/* Compact preview bullets (always visible) */}
-                      {x.bullets?.length ? (
+                      {/* {x.bullets?.length ? (
                         <ul className="xpPreview">
                           {x.bullets.slice(0, 2).map((b, i) => (
                             <li key={i}>{b}</li>
                           ))}
                         </ul>
-                      ) : null}
+                      ) : null} */}
 
                       <div className="xpRule" aria-hidden="true" />
 
