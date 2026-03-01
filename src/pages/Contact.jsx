@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import "../styles/contact.css";
 
 export default function Contact() {
+  const base = import.meta.env.BASE_URL;
   return (
     <div className="contactPage pageMotif scanline">
 
