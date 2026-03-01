@@ -206,6 +206,24 @@ export const cv = {
       tags: ["Energy Profiling", "Experimental Design", "EnergiBridge", "Data Analysis", "Automation", "Cross-Platform Systems"],
       github: "https://github.com/preethika-ajay/Podcast-Energy-Experiment"
     },
+    {
+      name: "Western Showdown (Mexican Standoff) — OpenGL Real-Time Tech Demo",
+      desc:
+        "Built a real-time OpenGL 4.1 C++17 tech demo simulating a desert duel between two gunslingers. Implemented a hybrid PBR + Blinn–Phong shading model, normal & environment mapping, multi-light shadow mapping with PCF filtering, hierarchical animation (procedural windmill), cubic Bézier camera/bullet trajectories, collision-triggered events, and an event-driven particle system for muzzle flashes and explosions—controlled via an ImGui debug UI.",
+      tags: [
+        "C++17",
+        "OpenGL 4.1",
+        "GLSL",
+        "Rendering Pipeline",
+        "PBR",
+        "Shadow Mapping (PCF)",
+        "ImGui",
+        "Particle Systems",
+        "Bezier Curves",
+        "Hierarchical Animation"
+      ],
+      github: "https://github.com/preethika-ajay/Mexican-Standoff"
+    },
 
     {
       name: "Red Reflex Detection System (Forus Health)",
