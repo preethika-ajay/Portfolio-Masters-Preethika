@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+
 const base = import.meta.env.BASE_URL;
 const asset = (p) => `${base}${p}`;
 
@@ -197,6 +199,13 @@ export const cv = {
   ],
 
   projects: [
+   {
+      name: "Cross-Platform Podcast Energy Profiling with EnergiBridge",
+      desc:
+        "Designed and implemented a cross-platform experimental framework to measure and compare system-level energy consumption during podcast streaming on Spotify and Apple Music. Automated data collection using EnergiBridge, processed multi-OS energy metrics (Intel, AMD, Apple Silicon), and built analytical scripts for visualization, statistical comparison, and reproducible benchmarking.",
+      tags: ["Energy Profiling", "Experimental Design", "EnergiBridge", "Data Analysis", "Automation", "Cross-Platform Systems"],
+      github: "https://github.com/preethika-ajay/Podcast-Energy-Experiment"
+    },
 
     {
       name: "Red Reflex Detection System (Forus Health)",
