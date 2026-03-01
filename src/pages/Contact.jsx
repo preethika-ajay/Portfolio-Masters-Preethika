@@ -10,9 +10,6 @@ export default function Contact() {
 
       <div className="pageTitle">
         <h1>Contact</h1>
-        <p className="muted">
-          Establish connection — collaborations, research, or engineering discussions.
-        </p>
       </div>
 
       <Section title="Communication Terminal">
